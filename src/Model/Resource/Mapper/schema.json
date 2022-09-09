@@ -1,0 +1,15 @@
+{
+  "table": "resource",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "taskId"
+    },
+    {
+      "name": "name"
+    },
+    {
+      "name": "amount"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "table": "task",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "name"
+    },
+    {
+      "name": "creator"
+    },
+    {
+      "name": "assignedUserId"
+    },
+    {
+      "name": "projectId"
+    },
+    {
+      "name": "childOf"
+    },
+    {
+      "name": "status"
+    },
+    {
+      "name": "orderNeeded"
+    },
+    {
+      "name": "orderId"
+    },
+    {
+      "name": "orderInformation"
+    },
+    {
+      "name": "timestamp"
+    },
+    {
+      "name": "description"
+    }
+  ]
+}

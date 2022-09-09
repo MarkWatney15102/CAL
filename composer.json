@@ -1,0 +1,29 @@
+{
+    "version": "dev-0.1.0",
+    "description": "Auftragssystem",
+    "name": "eikewientjes/auftragssystem",
+    "autoload": {
+        "classmap": [
+            "src",
+            "lib"
+        ]
+    },
+    "authors": [
+        {
+            "name": "MarkWatney15102",
+            "email": "eikewientjes882@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-gd": "*",
+        "ext-xml": "*",
+        "ext-dom": "*",
+        "ext-mbstring": "*",
+
+        "bramus/router": "1.6.1",
+        "catfan/medoo": "2.1.7",
+        "skunkbad/php-view-loader": "1.0.3",
+        "dompdf/dompdf": "^2.0",
+        "endroid/qrcode": "^4.5"
+    }
+}

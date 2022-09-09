@@ -1,0 +1,91 @@
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.notification {
+  position: absolute;
+  z-index: 1000;
+  right: 15px;
+  -webkit-animation: fadeOut 3500ms;
+  animation: fadeOut 3500ms;
+  animation-fill-mode: forwards;
+}
+
+.no-access {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  b {
+    font-size: 25px;
+  }
+}

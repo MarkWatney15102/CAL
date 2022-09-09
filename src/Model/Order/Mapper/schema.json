@@ -1,0 +1,21 @@
+{
+  "table": "order",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name" : "supplier"
+    },
+    {
+      "name": "trackingCode"
+    },
+    {
+      "name": "status"
+    },
+    {
+      "name": "timestamp"
+    },
+    {
+      "name": "taskId"
+    }
+  ]
+}

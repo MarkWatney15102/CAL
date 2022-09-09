@@ -1,0 +1,9 @@
+{
+  "table": "cat_order_status",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "text"
+    }
+  ]
+}

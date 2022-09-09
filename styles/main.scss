@@ -1,0 +1,34 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/jquery-ui/themes/base/all.css";
+@import "_messages";
+@import "_sidebar";
+@import "_job";
+@import "_images";
+@import "_buttons";
+
+@import "../../node_modules/datatables.net-dt/css/jquery.dataTables.css";
+
+.container-fluid {
+    padding: 0;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.text-pull-right {
+    text-align: right;
+}
+
+#main-content {
+    width: calc(100% - 225px);
+    width: -webkit-calc(100% - 225px);
+    width: -moz-calc(100% - 225px);
+    margin-left: 225px;
+    padding: 15px 5px 15px 25px;
+}
+
+.card-subtitle-button {
+    margin-top: -30px;
+    margin-bottom: 5px;
+}

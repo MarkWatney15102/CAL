@@ -1,0 +1,28 @@
+.left-sidebar {
+  height: 100%;
+  width: 225px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: darkslategrey;
+  padding-top: 20px;
+
+  .sidebar-header {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    text-align: center
+  }
+
+  ul li a {
+    .navbar-icon {
+      height: 25px;
+      width: auto;
+      margin-top: -3px;
+    }
+  }
+
+  .dropdown {
+    margin-left: 15px;
+  }
+}

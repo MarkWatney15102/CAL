@@ -1,0 +1,37 @@
+{
+  "name": "auftragssystem",
+  "version": "0.1.0-dev",
+  "description": "Auftragssystem",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "js": "webpack --config webpack.config.js",
+    "css": "node-sass --output-style compressed --source-map true --source-map-contents true --precision 6 styles/main.scss dist/css/build.css",
+    "build": "npm run js && npm run css",
+    "deploy": "npm i && npm run build && php composer.phar install",
+    "deploy-win": "npm i && npm run build && php composer install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.eike-wientjes.de:EikeWientjes/shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.0-beta1",
+    "bootstrap-icons": "^1.4.0",
+    "datatables.net": "^1.12.1",
+    "datatables.net-dt": "^1.12.1",
+    "jquery": "^3.6.0",
+    "jquery-ui": "^1.13.2",
+    "node-sass": "^7.0.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

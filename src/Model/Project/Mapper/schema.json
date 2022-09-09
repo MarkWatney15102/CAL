@@ -1,0 +1,33 @@
+{
+    "table": "projects",
+    "primaryKey": "ID",
+    "fields": [
+        {
+            "name": "description"
+        },
+        {
+            "name": "title"
+        },
+        {
+            "name": "start"
+        },
+        {
+            "name": "end"
+        },
+        {
+            "name": "creator_user_id"
+        },
+        {
+            "name": "current_worker_user_id"
+        },
+        {
+            "name": "status"
+        },
+        {
+            "name": "sollCount"
+        },
+        {
+            "name": "istCount"
+        }
+    ]
+}

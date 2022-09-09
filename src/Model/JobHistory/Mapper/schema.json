@@ -1,0 +1,21 @@
+{
+  "table": "job_histories",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "jobId"
+    },
+    {
+      "name": "userId"
+    },
+    {
+      "name": "message"
+    },
+    {
+      "name": "type"
+    },
+    {
+      "name": "timestamp"
+    }
+  ]
+}

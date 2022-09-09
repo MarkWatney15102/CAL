@@ -1,0 +1,9 @@
+{
+  "table": "cat_job_history_types",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "text"
+    }
+  ]
+}
