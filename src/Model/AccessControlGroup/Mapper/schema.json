@@ -1,0 +1,9 @@
+{
+  "table": "access_control_group",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "name"
+    }
+  ]
+}
