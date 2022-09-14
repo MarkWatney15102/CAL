@@ -15,6 +15,7 @@ class User extends AbstractEntity
     protected string $lastname;
     protected string $password;
     protected string $createTime;
+    protected string $role;
 
     /**
      * Get the value of mail
@@ -144,5 +145,15 @@ class User extends AbstractEntity
     public function setLevel(int $level): void
     {
         $this->level = (string)$level;
+    }
+
+    public function getRole(): int
+    {
+        return (int)$this->role;
+    }
+
+    public function setRole(int $role): void
+    {
+        $this->role = (string)$role;
     }
 }

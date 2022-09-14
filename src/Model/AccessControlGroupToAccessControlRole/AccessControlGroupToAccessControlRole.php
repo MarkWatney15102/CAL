@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Model\AccessControlGroup\AccessControlGroupToAccessControlRole;
+namespace src\Model\AccessControlGroupToAccessControlRole;
 
 use lib\Model\AbstractEntity;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Model\AccessControlGroup\AccessControlGroupToAccessControlRole\Mapper;
+namespace src\Model\AccessControlGroupToAccessControlRole\Mapper;
 
 use lib\Model\AbstractContainer;
 

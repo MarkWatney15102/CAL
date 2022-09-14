@@ -7,10 +7,14 @@ require('bootstrap');
 
 require('./scripts/widgets/resourceButtons');
 require('./scripts/widgets/orderNumberRefresh');
+require('./scripts/widgets/AccessControl/change-group');
+require('./scripts/widgets/AccessControl/change-permission');
 
 $(function() {
     $('#addMaterial').addResourceButtons();
     $('#refreshOrderId').refreshOrderNumber();
+    $('#changeGroup').changeGroup();
+    $('#changePermission').changePermission();
 
     const options = {
         searching: false,

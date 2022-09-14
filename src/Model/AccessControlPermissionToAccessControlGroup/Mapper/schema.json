@@ -1,5 +1,5 @@
 {
-  "table": "access_control_permission",
+  "table": "access_control_permission_to_access_control_group",
   "primaryKey": "ID",
   "fields": [
     {
