@@ -11,7 +11,7 @@
     "css": "node-sass --output-style compressed --source-map true --source-map-contents true --precision 6 styles/main.scss dist/css/build.css",
     "build": "npm run js && npm run css",
     "deploy": "npm i && npm run build && php composer.phar install",
-    "deploy-win": "npm i && npm run build && php composer install"
+    "deploy-win": "npm i && npm run build && composer install"
   },
   "repository": {
     "type": "git",
