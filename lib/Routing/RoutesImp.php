@@ -10,6 +10,7 @@ use src\Controller\Home\HomeController;
 use src\Controller\Job\JobController;
 use src\Controller\Job\JobHistoryController;
 use src\Controller\Login\LoginController;
+use src\Controller\Migration\MigrationController;
 use src\Controller\Project\ProjectController;
 use src\Controller\Task\Order\OrderController;
 use src\Controller\Task\TaskController;
@@ -39,6 +40,14 @@ class RoutesImp
             RouteMethod::GET,
             Level::NO_LEVEL->getLevel(),
             false
+        );
+        $this->routes[] = new Route(
+            '/migration/run',
+            MigrationController::class,
+            'runMigrationAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
         );
         $this->routes[] = new Route(
             '/home',

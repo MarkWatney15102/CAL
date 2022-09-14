@@ -1,0 +1,18 @@
+{
+  "table": "migration",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "migrationName"
+    },
+    {
+      "name": "status"
+    },
+    {
+      "name": "message"
+    },
+    {
+      "name": "timestamp"
+    }
+  ]
+}
