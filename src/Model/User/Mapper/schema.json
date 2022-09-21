@@ -21,6 +21,9 @@
             "name": "password"
         },
         {
+            "name": "role"
+        },
+        {
             "name": "createTime"
         }
     ]

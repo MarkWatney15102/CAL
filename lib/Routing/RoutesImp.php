@@ -5,6 +5,10 @@ namespace lib\Routing;
 
 use lib\Auth\Level;
 use src\Controller\Access\AccessController;
+use src\Controller\Admin\AccessControl\AccessControlGroupController;
+use src\Controller\Admin\AccessControl\AccessControlPermissionController;
+use src\Controller\Admin\AccessControl\AccessControlRoleController;
+use src\Controller\Admin\AdminDashboardController;
 use src\Controller\Dashboard\DashboardController;
 use src\Controller\Home\HomeController;
 use src\Controller\Job\JobController;
@@ -209,6 +213,113 @@ class RoutesImp
             Level::WORKER->getLevel(),
             true
         );
+
+        // Admin
+        $this->routes[] = new Route(
+            '/admin/dashboard',
+            AdminDashboardController::class,
+            'adminDashboardAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+
+        // Start Role
+        $this->routes[] = new Route(
+            '/admin/ac/role',
+            AccessControlRoleController::class,
+            'roleAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/ac/role/edit/(\d+)',
+            AccessControlRoleController::class,
+            'editRoleAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/ac/role/edit/(\d+)',
+            AccessControlRoleController::class,
+            'saveRoleAction',
+            RouteMethod::POST,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/ac/role/group/change',
+            AccessControlRoleController::class,
+            'changeGroupAction',
+            RouteMethod::POST,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        // End Role
+
+        // Start Group
+        $this->routes[] = new Route(
+            '/admin/ac/group',
+            AccessControlGroupController::class,
+            'groupAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/ac/group/edit/(\d+)',
+            AccessControlGroupController::class,
+            'editGroupAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/ac/group/edit/(\d+)',
+            AccessControlGroupController::class,
+            'saveGroupAction',
+            RouteMethod::POST,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/ac/group/permission/change',
+            AccessControlGroupController::class,
+            'changePermissionAction',
+            RouteMethod::POST,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        // End Group
+
+        // Start Permission
+        $this->routes[] = new Route(
+            '/admin/ac/permission',
+            AccessControlPermissionController::class,
+            'permissionAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/ac/permission/edit/(\d+)',
+            AccessControlPermissionController::class,
+            'editPermissionAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/ac/permission/edit/(\d+)',
+            AccessControlPermissionController::class,
+            'savePermissionAction',
+            RouteMethod::POST,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        // End Permission
     }
 
     public function getRoutes(): array

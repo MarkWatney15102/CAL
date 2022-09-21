@@ -1,0 +1,9 @@
+{
+  "table": "access_control_role",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "name"
+    }
+  ]
+}

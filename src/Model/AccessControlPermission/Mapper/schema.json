@@ -1,0 +1,9 @@
+{
+  "table": "access_control_permission",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "name"
+    }
+  ]
+}
