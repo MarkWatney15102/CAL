@@ -9,6 +9,7 @@ use src\Controller\Admin\AccessControl\AccessControlGroupController;
 use src\Controller\Admin\AccessControl\AccessControlPermissionController;
 use src\Controller\Admin\AccessControl\AccessControlRoleController;
 use src\Controller\Admin\AdminDashboardController;
+use src\Controller\Admin\User\UserEditController;
 use src\Controller\Dashboard\DashboardController;
 use src\Controller\Home\HomeController;
 use src\Controller\Job\JobController;
@@ -220,6 +221,38 @@ class RoutesImp
             AdminDashboardController::class,
             'adminDashboardAction',
             RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/user/create',
+            UserEditController::class,
+            'createUserAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/user/create',
+            UserEditController::class,
+            'saveUserAction',
+            RouteMethod::POST,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/user/edit/(\d+)',
+            UserEditController::class,
+            'editUserAction',
+            RouteMethod::GET,
+            Level::ADMIN->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/admin/user/edit/(\d+)',
+            UserEditController::class,
+            'saveUserAction',
+            RouteMethod::POST,
             Level::ADMIN->getLevel(),
             true
         );
