@@ -8,14 +8,14 @@ use lib\Model\AbstractEntity;
 
 class User extends AbstractEntity
 {
-    protected string $mail;
-    protected string $username;
-    protected string $level;
-    protected string $firstname;
-    protected string $lastname;
-    protected string $password;
-    protected string $createTime;
-    protected string $role;
+    protected string $mail = "";
+    protected string $username = "";
+    protected string $level = "";
+    protected string $firstname = "";
+    protected string $lastname = "";
+    protected string $password = "";
+    protected string $createTime = "";
+    protected string $role = "";
 
     /**
      * Get the value of mail

@@ -12,7 +12,7 @@ enum Level
     public function getLevel(): int
     {
         return match ($this) {
-            self::NO_LEVEL => 0,
+            self::NO_LEVEL => 5,
             self::WORKER => 10,
             self::MANAGEMENT => 50,
             self::ADMIN => 100
