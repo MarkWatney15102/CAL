@@ -26,6 +26,7 @@
         "catfan/medoo": "2.1.7",
         "skunkbad/php-view-loader": "1.0.3",
         "dompdf/dompdf": "^2.0",
-        "endroid/qrcode": "^4.5"
+        "endroid/qrcode": "^4.5",
+        "vlucas/phpdotenv": "^5.4"
     }
 }
