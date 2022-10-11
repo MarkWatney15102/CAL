@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace lib\Database;
 
+use Dotenv\Dotenv;
 use Medoo\Medoo;
 
 class Database
@@ -15,22 +16,19 @@ class Database
         $this->medoo = self::getDatabaseConnection();
     }
 
-    public static function getDatabaseConnection(string $configPath = ""): Medoo
+    public static function getDatabaseConnection(): Medoo
     {
-        if (!empty($configPath)) {
-            require $configPath;
-        } else {
-            require $_SERVER['DOCUMENT_ROOT'] . "/config/config.php";
-        }
+        $dotenv = Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT']);
+        $dotenv->load();
 
         return new Medoo(
             [
                 'type' => 'mysql',
-                'host' => $host,
-                'database' => $database,
-                'username' => $username,
-                'password' => $password,
-                'port' => $port
+                'host' => $_ENV['DB_HOST'],
+                'database' => $_ENV['DB_DB'],
+                'username' => $_ENV['DB_USERNAME'],
+                'password' => $_ENV['DB_PASSWORD'],
+                'port' => $_ENV['DB_PORT']
             ]
         );
     }

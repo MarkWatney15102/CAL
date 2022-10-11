@@ -8,22 +8,12 @@
 php installer.php
 ```
 
-# Wie soll das ganze funktionieren?
-1. Projekt erstellen
-2. Auftrag erstellen
-3. Auftragspositionen
-
-
----
-
-Auftragsposition = Benötiges Teil für Auftrag z.B: Mutter M8
-
-Beispiel
-
-3055.1
-    .2
-    .3
-    .4.1 Mutter M8
-      .2 Schraube M8
-      .3 40er Rohr
-      .3 60er Rohr
+# Was muss beim Aufsetzten des Systems gemacht werden
+1. .env Datei erstellen mit Datenbank Verbindung
+```dotenv
+DB_HOST='DB HOST'
+DB_PORT='3306'
+DB_USERNAME='DB Username'
+DB_PASSWORD='DB PASSWORD'
+DB_DB='DB NAME'
+```

@@ -8,3 +8,5 @@ package-lock.json
 /dist/css/build.css.map
 /dist/css/output.css
 /dist/js/bundle.js
+
+.env
