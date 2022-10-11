@@ -9,16 +9,20 @@ class DateFormatHelper
 {
     public static function format(string $date, string $format = 'd.m.Y'): string
     {
-        if (empty($format)) {
-            throw new Exception('Invalid format for date');
+        if ($date !== '0000-00-00 00:00:00') {
+            if (empty($format)) {
+                throw new Exception('Invalid format for date');
+            }
+
+            try {
+                $date = new DateTime($date);
+            } catch (Exception $e) {
+                $date = new DateTime();
+            }
+
+            return $date->format($format);
         }
 
-        try {
-            $date = new DateTime($date);
-        } catch (Exception $e) {
-            $date = new DateTime();
-        }
-
-        return $date->format($format);
+        return 'Kein Datum gesetzt';
     }
 }

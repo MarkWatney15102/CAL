@@ -16,8 +16,8 @@ class HomeControllerService
             if ($project instanceof Project) {
                 $projectId = $project->getId();
                 $projectTitle = $project->getTitle();
-                $projectStart = DateFormatHelper::format($project->getStart());
-                $projectEnd = DateFormatHelper::format($project->getEnd());
+                $projectStart = DateFormatHelper::format($project->getStart() ?? "");
+                $projectEnd = DateFormatHelper::format($project->getEnd() ?? "");
 
                 $return .= <<<HTML
                     <tr>
