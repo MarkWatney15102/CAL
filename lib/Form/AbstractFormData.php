@@ -53,6 +53,10 @@ abstract class AbstractFormData
                 $element->setWrite($closure);
             }
 
+            if (isset($structure['attributes'])) {
+                $element->setAttributes($structure['attributes']);
+            }
+
             if ($element instanceof ElementSelect) {
                 if (isset($structure['options'])) {
                     $element->setOptions(

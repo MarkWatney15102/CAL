@@ -15,8 +15,9 @@ class ElementDate extends AbstractElement
         $class = $this->getClass() . ' form-control' ?? "";
         $id = $this->getId() ?? "";
         $value = $this->getValue();
+        $attributes = $this->getAttributes();
 
-        return '<input type="date" class="' . $class . '" name="' . $id . '" id="' . $id . '" value="' . $value . '">';
+        return '<input type="date" class="' . $class . '" name="' . $id . '" id="' . $id . '" value="' . $value . '" ' . $attributes . '>';
     }
 
     public function setValue(string|int $value): AbstractElement

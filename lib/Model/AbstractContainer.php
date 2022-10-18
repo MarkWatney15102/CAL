@@ -23,7 +23,11 @@ abstract class AbstractContainer extends Singleton
 
         $primaryKey = $json->primaryKey;
 
-        $data = $db->select($json->table, [$primaryKey], $search);
+        try {
+            $data = $db->select($json->table, [$primaryKey], $search);
+        } catch (\PDOException $exception) {
+            throw new \Exception('Error in Mapper class ' . $mapperName);
+        }
 
         $entity = [];
         foreach ($data as $element) {

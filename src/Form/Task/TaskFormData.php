@@ -152,6 +152,24 @@ class TaskFormData extends AbstractFormData
                 'type' => Element::SUBMIT,
                 'label' => 'Speichern'
             ]
+        )->addElement(
+            [
+                'id' => 'description',
+                'type' => Element::TEXTAREA,
+                'label' => 'Beschreibung',
+                'read' => function () use ($task) {
+                    if ($task instanceof Task && !empty($task->getDescription())) {
+                        return $task->getDescription();
+                    }
+
+                    return '';
+                },
+                'write' => function ($value) use ($task) {
+                    if ($task instanceof Task) {
+                        $task->setDescription($value);
+                    }
+                }
+            ]
         );
 
         if ((int)$task->getOrderNeeded() === 1) {
@@ -185,24 +203,6 @@ class TaskFormData extends AbstractFormData
                     },
                     'write' => function ($value) use ($task) {
                         $task->setOrderInformation($value);
-                    }
-                ]
-            )->addElement(
-                [
-                    'id' => 'description',
-                    'type' => Element::TEXTAREA,
-                    'label' => 'Beschreibung',
-                    'read' => function () use ($task) {
-                        if ($task instanceof Task && !empty($task->getDescription())) {
-                            return $task->getDescription();
-                        }
-
-                        return '';
-                    },
-                    'write' => function ($value) use ($task) {
-                        if ($task instanceof Task) {
-                            $task->setDescription($value);
-                        }
                     }
                 ]
             );

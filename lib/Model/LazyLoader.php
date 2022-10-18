@@ -28,7 +28,7 @@ class LazyLoader
         $primaryKeyField = $json->primaryKey;
 
         $fields = [];
-        $fields[] = $primaryKeyField;
+        $fields[] = "`$primaryKeyField` ID";
         foreach ($json->fields as $field) {
             $fields[] = "`{$field->name}`";
         }

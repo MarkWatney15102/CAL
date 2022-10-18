@@ -90,7 +90,7 @@ abstract class AbstractMapper extends Singleton
             if ($property->getName() !== 'ID') {
                 $values[$property->getName()] =  $property->getValue($model); //"'" . $property->getValue($model) . "'";
             } else {
-                $values['ID'] = "NULL";
+                $values[$json->primaryKey] = $property->getValue($model) ?? 'NULL';
             }
         }
 

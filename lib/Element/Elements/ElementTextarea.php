@@ -11,7 +11,8 @@ class ElementTextarea extends AbstractElement
         $class = $this->getClass() . ' form-control' ?? "";
         $id = $this->getId() ?? "";
         $value = $this->getValue();
+        $attributes = $this->getAttributes();
 
-        return '<textarea class="' . $class . '" name="' . $id . '" id="' . $id . '">' . $value . '</textarea>';
+        return '<textarea class="' . $class . '" name="' . $id . '" id="' . $id . '" ' . $attributes . '>' . $value . '</textarea>';
     }
 }

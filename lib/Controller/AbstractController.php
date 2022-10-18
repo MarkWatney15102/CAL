@@ -8,6 +8,8 @@ use Exception;
 use JsonException;
 use lib\Database\Database;
 use lib\Form\AbstractForm;
+use lib\Message\Message;
+use lib\Message\MessageGroup;
 use lib\Model\AbstractEntity;
 use lib\Template\Template;
 
@@ -19,6 +21,11 @@ abstract class AbstractController implements ControllerInterface
 
     public function render(string $view, array $args = []): void
     {
+        if (!empty($_COOKIE['message'])) {
+            MessageGroup::getInstance()?->addMessage(Message::INFO, 'Info', $_COOKIE['message']);
+            setcookie('message', "", -1, "/");
+        }
+
         $template = (!isset($args['renderWithBasicBody']) || (bool)$args['renderWithBasicBody'] === false) ? new Template(false) : new Template();
 
         $path = $_SERVER['DOCUMENT_ROOT'] . '/views/' . $view . '.php';

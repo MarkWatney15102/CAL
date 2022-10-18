@@ -10,6 +10,7 @@ use src\Controller\Admin\AccessControl\AccessControlPermissionController;
 use src\Controller\Admin\AccessControl\AccessControlRoleController;
 use src\Controller\Admin\AdminDashboardController;
 use src\Controller\Admin\User\UserEditController;
+use src\Controller\Api\ApiController;
 use src\Controller\Dashboard\DashboardController;
 use src\Controller\Home\HomeController;
 use src\Controller\Job\JobController;
@@ -17,6 +18,7 @@ use src\Controller\Job\JobHistoryController;
 use src\Controller\Login\LoginController;
 use src\Controller\Migration\MigrationController;
 use src\Controller\Project\ProjectController;
+use src\Controller\Storage\StorageController;
 use src\Controller\Task\Order\OrderController;
 use src\Controller\Task\TaskController;
 use src\Controller\User\ProfileController;
@@ -353,6 +355,74 @@ class RoutesImp
             true
         );
         // End Permission
+
+        // Start Storage
+        $this->routes[] = new Route(
+            '/storage',
+            StorageController::class,
+            'listStoragePlacesAction',
+            RouteMethod::GET,
+            Level::WORKER->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/storage/place/(\d+)',
+            StorageController::class,
+            'storagePlaceAction',
+            RouteMethod::GET,
+            Level::WORKER->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/storage/place/(\d+)',
+            StorageController::class,
+            'saveStoragePlaceAction',
+            RouteMethod::POST,
+            Level::WORKER->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/storage/items',
+            StorageController::class,
+            'itemAction',
+            RouteMethod::GET,
+            Level::WORKER->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/storage/item/(\d+)',
+            StorageController::class,
+            'editItemAction',
+            RouteMethod::GET,
+            Level::WORKER->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/storage/item/(\d+)',
+            StorageController::class,
+            'saveStorageItemAction',
+            RouteMethod::POST,
+            Level::WORKER->getLevel(),
+            true
+        );
+        // End Storage
+
+        $this->routes[] = new Route(
+            '/api/storage/bookout',
+            ApiController::class,
+            'bookoutStorageItemAction',
+            RouteMethod::POST,
+            Level::WORKER->getLevel(),
+            true
+        );
+        $this->routes[] = new Route(
+            '/api/storage/bookin',
+            ApiController::class,
+            'bookinStorageItemAction',
+            RouteMethod::POST,
+            Level::WORKER->getLevel(),
+            true
+        );
     }
 
     public function getRoutes(): array

@@ -14,6 +14,12 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-lg-12">
+                        <?= $this->form->getElement('description')->label() ?>
+                        <?= $this->form->getElement('description')->getHtml() ?>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-6">
                         <?= $this->form->getElement('assignedUserId')->label() ?>
                         <?= $this->form->getElement('assignedUserId')->getHtml() ?>

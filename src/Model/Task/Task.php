@@ -6,17 +6,17 @@ use lib\Model\AbstractEntity;
 
 class Task extends AbstractEntity
 {
-    protected $name;
-    protected $creator;
-    protected $assignedUserId;
-    protected $projectId;
-    protected $childOf;
-    protected $timestamp;
-    protected $status;
-    protected $orderNeeded;
-    protected $orderId;
-    protected $orderInformation;
-    protected $description;
+    protected $name = "";
+    protected $creator = 0;
+    protected $assignedUserId = 0;
+    protected $projectId = 0;
+    protected $childOf = 0;
+    protected $timestamp = "";
+    protected $status = 0;
+    protected $orderNeeded = 0;
+    protected $orderId = 0;
+    protected $orderInformation = 0;
+    protected $description = "";
 
     /**
      * @return mixed
