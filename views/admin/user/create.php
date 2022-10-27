@@ -34,6 +34,7 @@
                     <div class="col-lg-6">
                         <?= $this->form->getElement('role')->label() ?>
                         <?= $this->form->getElement('role')->getHtml() ?>
+                        <?= $this->form->getElement('status')->getHtml() ?>
                     </div>
                 </div>
                 <div class="row">

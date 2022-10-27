@@ -4,11 +4,13 @@ declare(strict_types=1);
 namespace lib\Routing;
 
 use lib\Auth\Level;
+use src\Controller\Register\RegisterController;
 use src\Controller\Access\AccessController;
 use src\Controller\Admin\AccessControl\AccessControlGroupController;
 use src\Controller\Admin\AccessControl\AccessControlPermissionController;
 use src\Controller\Admin\AccessControl\AccessControlRoleController;
 use src\Controller\Admin\AdminDashboardController;
+use src\Controller\Admin\User\UserDeleteController;
 use src\Controller\Admin\User\UserEditController;
 use src\Controller\Dashboard\DashboardController;
 use src\Controller\Home\HomeController;
@@ -59,6 +61,22 @@ class RoutesImp
             HomeController::class,
             'redirectAction',
             RouteMethod::GET,
+            Level::NO_LEVEL->getLevel(),
+            false
+        );
+        $this->routes[] = new Route(
+            '/register',
+            RegisterController::class,
+            'register',
+            RouteMethod::GET,
+            Level::NO_LEVEL->getLevel(),
+            false
+        );
+        $this->routes[] = new Route(
+            '/register',
+            RegisterController::class,
+            'tryRegister',
+            RouteMethod::POST,
             Level::NO_LEVEL->getLevel(),
             false
         );
@@ -255,6 +273,14 @@ class RoutesImp
             RouteMethod::POST,
             Level::ADMIN->getLevel(),
             true
+        );
+        $this->routes[] = new Route(
+            uri: '/admin/user/delete/(\d+)',
+            controller: UserDeleteController::class,
+            action: 'deleteAction',
+            method: RouteMethod::GET,
+            level: Level::ADMIN->getLevel(),
+            requiresLogin: true
         );
 
         // Start Role

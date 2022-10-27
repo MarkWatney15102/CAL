@@ -16,6 +16,7 @@ class User extends AbstractEntity
     protected string $password = "";
     protected string $createTime = "";
     protected string $role = "";
+    protected string $status = "";
 
     /**
      * Get the value of mail
@@ -155,5 +156,15 @@ class User extends AbstractEntity
     public function setRole(int $role): void
     {
         $this->role = (string)$role;
+    }
+
+    public function setStatus(int $status): void
+    {
+        $this->status = (string)$status;
+    }
+
+    public function getStatus(): int
+    {
+        return (int)$this->status;
     }
 }

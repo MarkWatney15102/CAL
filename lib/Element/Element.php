@@ -29,6 +29,9 @@ enum Element
     case CHECKBOX;
     case TEXTAREA;
 
+    /**
+     * @throws Exception
+     */
     public function getClass(): AbstractElement
     {
         return match ($this) {
