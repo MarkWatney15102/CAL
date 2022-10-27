@@ -20,7 +20,10 @@
                             <tr>
                                 <td><?= $user->getID() ?></td>
                                 <td><?= $user->getFirstname() . " " . $user->getLastname() ?></td>
-                                <td><a href="/admin/user/edit/<?= $user->getID() ?>" class="btn btn-outline-primary">Bearbeiten</a></td>
+                                <td>
+                                    <a href="/admin/user/edit/<?= $user->getID() ?>" class="btn btn-outline-primary">Bearbeiten</a>
+                                    <a href="/admin/user/delete/<?= $user->getID() ?>" class="btn btn-outline-primary">Löschen</a>
+                                </td>
                             </tr>
                         <?php } ?>
                     </tbody>

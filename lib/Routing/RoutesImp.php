@@ -9,6 +9,7 @@ use src\Controller\Admin\AccessControl\AccessControlGroupController;
 use src\Controller\Admin\AccessControl\AccessControlPermissionController;
 use src\Controller\Admin\AccessControl\AccessControlRoleController;
 use src\Controller\Admin\AdminDashboardController;
+use src\Controller\Admin\User\UserDeleteController;
 use src\Controller\Admin\User\UserEditController;
 use src\Controller\Dashboard\DashboardController;
 use src\Controller\Home\HomeController;
@@ -255,6 +256,14 @@ class RoutesImp
             RouteMethod::POST,
             Level::ADMIN->getLevel(),
             true
+        );
+        $this->routes[] = new Route(
+            uri: '/admin/user/delete/(\d+)',
+            controller: UserDeleteController::class,
+            action: 'deleteAction',
+            method: RouteMethod::GET,
+            level: Level::ADMIN->getLevel(),
+            requiresLogin: true
         );
 
         // Start Role
