@@ -2,6 +2,7 @@
 
 namespace src\Form\User\Admin;
 
+use Exception;
 use lib\Element\Element;
 use lib\Form\AbstractFormData;
 use src\Model\User\User;
@@ -9,6 +10,9 @@ use src\Service\User\AdminUserService;
 
 class AdminUserFormData extends AbstractFormData
 {
+    /**
+     * @throws Exception
+     */
     public function initStructure(): void
     {
         /** @var User $user */
@@ -126,6 +130,17 @@ class AdminUserFormData extends AbstractFormData
                     if ($user instanceof User) {
                         $user->setRole((int)$value);
                     }
+                }
+            ]
+        )->addElement(
+            [
+                'id' => 'status',
+                'type' => Element::HIDDEN,
+                'read' => function () use ($user) {
+                    return 1;
+                },
+                'write' => function () use ($user) {
+                    $user->setStatus(1);
                 }
             ]
         )->addElement(

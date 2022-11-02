@@ -18,12 +18,14 @@
                         /** @var \src\Model\User\User $user */
                         foreach ($this->userList as $user) { ?>
                             <tr>
-                                <td><?= $user->getID() ?></td>
-                                <td><?= $user->getFirstname() . " " . $user->getLastname() ?></td>
-                                <td>
-                                    <a href="/admin/user/edit/<?= $user->getID() ?>" class="btn btn-outline-primary">Bearbeiten</a>
-                                    <a href="/admin/user/delete/<?= $user->getID() ?>" class="btn btn-outline-primary">Löschen</a>
-                                </td>
+                                <?php if ($user->getStatus() != 0){ ?>
+                                    <td><?= $user->getID() ?></td>
+                                    <td><?= $user->getFirstname() . " " . $user->getLastname() ?></td>
+                                    <td>
+                                        <a href="/admin/user/edit/<?= $user->getID() ?>" class="btn btn-outline-primary">Bearbeiten</a>
+                                        <a href="/admin/user/delete/<?= $user->getID() ?>" class="btn btn-outline-primary">Löschen</a>
+                                    </td>
+                                <?php }?>
                             </tr>
                         <?php } ?>
                     </tbody>

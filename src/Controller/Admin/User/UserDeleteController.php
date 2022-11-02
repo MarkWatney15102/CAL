@@ -18,8 +18,8 @@ class UserDeleteController extends AbstractController
         $user = $mapper->read($userId);
 
         if ($user instanceof User) {
-
-            $mapper->delete($user);
+            $user->setStatus('0');
+            UserMapper::getInstance()->update($user);
             Redirect::to('/admin/dashboard');
         }
     }
