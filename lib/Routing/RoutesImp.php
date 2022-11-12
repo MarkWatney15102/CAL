@@ -51,8 +51,8 @@ class RoutesImp
             MigrationController::class,
             'runMigrationAction',
             RouteMethod::GET,
-            Level::ADMIN->getLevel(),
-            true
+            Level::NO_LEVEL->getLevel(),
+            false
         );
         $this->routes[] = new Route(
             '/home',
