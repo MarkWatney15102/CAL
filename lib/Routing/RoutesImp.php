@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace lib\Routing;
 
 use lib\Auth\Level;
+use src\Controller\Register\RegisterController;
 use src\Controller\Access\AccessController;
 use src\Controller\Admin\AccessControl\AccessControlGroupController;
 use src\Controller\Admin\AccessControl\AccessControlPermissionController;
@@ -60,6 +61,22 @@ class RoutesImp
             HomeController::class,
             'redirectAction',
             RouteMethod::GET,
+            Level::NO_LEVEL->getLevel(),
+            false
+        );
+        $this->routes[] = new Route(
+            '/register',
+            RegisterController::class,
+            'register',
+            RouteMethod::GET,
+            Level::NO_LEVEL->getLevel(),
+            false
+        );
+        $this->routes[] = new Route(
+            '/register',
+            RegisterController::class,
+            'tryRegister',
+            RouteMethod::POST,
             Level::NO_LEVEL->getLevel(),
             false
         );

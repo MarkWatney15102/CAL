@@ -5,11 +5,16 @@
                 <?= $this->form->open() ?>
                 <?= $this->form->getElement('username')->label() ?>
                 <?= $this->form->getElement('username')->getHtml() ?>
+                <?= $this->form->getElement('firstname')->label() ?>
+                <?= $this->form->getElement('firstname')->getHtml() ?>
+                <?= $this->form->getElement('lastname')->label() ?>
+                <?= $this->form->getElement('lastname')->getHtml() ?>
+                <?= $this->form->getElement('email')->label() ?>
+                <?= $this->form->getElement('email')->getHtml() ?>
                 <?= $this->form->getElement('password')->label() ?>
                 <?= $this->form->getElement('password')->getHtml() ?>
                 <br>
-                <?= $this->form->getElement('login')->getHtml() ?>
-                <a href="/register" target="_blank" class="btn btn-outline-primary" style="float: right;">Registrieren</a>
+                <?= $this->form->getElement('register')->getHtml() ?>
                 <?= $this->form->close() ?>
             </div>
         </div>
