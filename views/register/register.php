@@ -3,8 +3,6 @@
         <div class="card">
             <div class="card-body">
                 <?= $this->form->open() ?>
-                <?= $this->form->getElement('username')->label() ?>
-                <?= $this->form->getElement('username')->getHtml() ?>
                 <?= $this->form->getElement('firstname')->label() ?>
                 <?= $this->form->getElement('firstname')->getHtml() ?>
                 <?= $this->form->getElement('lastname')->label() ?>

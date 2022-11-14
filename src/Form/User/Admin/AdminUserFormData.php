@@ -8,7 +8,7 @@ use lib\Form\AbstractFormData;
 use src\Model\User\User;
 use src\Service\User\AdminUserService;
 
-class AdminUserFormData extends AbstractFormData
+class  AdminUserFormData extends AbstractFormData
 {
     /**
      * @throws Exception
