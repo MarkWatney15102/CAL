@@ -29,7 +29,7 @@ class RegisterController extends AbstractController
         $lastname = HTML::cleanString($_POST['lastname']);
         $username = substr($firstname, 0, 3) . substr($lastname, 0, 3);
         $email = HTML::cleanString($_POST['email']);
-        $password = HTML::cleanString($_POST['password']);
+        $password = HTML::cleanString(password_hash($_POST['password'], PASSWORD_DEFAULT));
 
         if (!empty($firstname) && !empty($lastname) && !empty($email) && !empty($password)) {
             $date = date('Y-m-d H:i:s', time());
@@ -38,12 +38,13 @@ class RegisterController extends AbstractController
             $user->setCreateTime($date);
             $user->setFirstname($firstname);
             $user->setLastname($lastname);
-            $user->setLevel(5);
+            $user->setLevel(50);
             $user->setMail($email);
-            $user->setPassword($password); //TODO hashen
+            $user->setPassword($password);
             $user->setUsername($username);
 
             UserMapper::getInstance()->create($user);
+            Redirect::to('/login');
         } else {
             MessageGroup::getInstance()?->addMessage(Message::ERROR, 'Registrierung Fehlgeschlagen', 'Bitte fülle alle Felder aus');
             Redirect::to('/register');
