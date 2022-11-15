@@ -31,12 +31,9 @@ class ProfileController extends AbstractController
         );
     }
 
-    /**
-     * @todo Speicher Logik
-     */
     public function saveAction(): void
     {
-        $username = HTML::cleanString($_POST['username']);
+        $email = HTML::cleanString($_POST['email']);
         $password = HTML::cleanString(password_hash($_POST['username'], PASSWORD_DEFAULT));
 
         $mapper = UserMapper::getInstance();
@@ -45,7 +42,7 @@ class ProfileController extends AbstractController
 
         if($user instanceof User){
             if(!(empty($password))) { $user->setPassword($password); }
-            if(!(empty($username))) { $user->setUsername($username); } //TODO ändern zu email
+            if(!(empty($email))) { $user->setMail($email); }
 
             UserMapper::getInstance()->update($user);
             Redirect::to('/profile');

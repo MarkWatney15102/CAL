@@ -44,12 +44,11 @@ class RegisterController extends AbstractController
             $user->setUsername($username);
 
             UserMapper::getInstance()->create($user);
+            MessageGroup::getInstance()?->addMessage(Message::SUCCESS, 'Registrierung erfolgreich', 'Sie können sich jetzt anmelden');
             Redirect::to('/login');
         } else {
             MessageGroup::getInstance()?->addMessage(Message::ERROR, 'Registrierung Fehlgeschlagen', 'Bitte fülle alle Felder aus');
             Redirect::to('/register');
         }
-
-        //TODO Funktioniert, nur noch Sachen in Datenbank einschreiben
     }
 }

@@ -2,11 +2,15 @@
 
 namespace src\Form\User\Profile;
 
+use Exception;
 use lib\Element\Element;
 use lib\Form\AbstractFormData;
 
 class ProfileFormData extends AbstractFormData
 {
+    /**
+     * @throws Exception
+     */
     public function initStructure(): void
     {
         $this->addElement(
@@ -14,6 +18,12 @@ class ProfileFormData extends AbstractFormData
                 'id' => 'username',
                 'type' => Element::TEXT,
                 'label' => 'Benutzername'
+            ]
+        )->addElement(
+            [
+                'id' => 'email',
+                'type' => Element::EMAIL,
+                'label' => 'Email'
             ]
         )->addElement(
             [
