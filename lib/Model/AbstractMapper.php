@@ -7,6 +7,7 @@ namespace lib\Model;
 use lib\Database\Database;
 use lib\Singleton\Singleton;
 use ReflectionClass;
+use ReflectionException;
 use src\Model\Order\Mapper\OrderMapper;
 
 abstract class AbstractMapper extends Singleton
@@ -72,6 +73,9 @@ abstract class AbstractMapper extends Singleton
         return $primaryId;
     }
 
+    /**
+     * @throws ReflectionException
+     */
     public function create(AbstractEntity $model): int
     {
         $id = 0;

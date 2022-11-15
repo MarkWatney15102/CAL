@@ -1,13 +1,16 @@
 <?php
 
-namespace src\Form\User\Profile;
+declare(strict_types=1);
+
+namespace src\Form;
 
 use Exception;
 use lib\Element\Element;
 use lib\Form\AbstractFormData;
 
-class ProfileFormData extends AbstractFormData
+class RegisterFormData extends AbstractFormData
 {
+
     /**
      * @throws Exception
      */
@@ -21,9 +24,21 @@ class ProfileFormData extends AbstractFormData
             ]
         )->addElement(
             [
+                'id' => 'firstname',
+                'type' => Element::TEXT,
+                'label' => 'Vorname'
+            ]
+        )->addElement(
+            [
+                'id' => 'lastname',
+                'type' => Element::TEXT,
+                'label' => 'Nachname'
+            ]
+        )->addElement(
+            [
                 'id' => 'email',
                 'type' => Element::EMAIL,
-                'label' => 'Email'
+                'label' => 'E-Mail'
             ]
         )->addElement(
             [
@@ -33,15 +48,9 @@ class ProfileFormData extends AbstractFormData
             ]
         )->addElement(
             [
-                'id' => 'sure',
-                'type' => Element::CHECKBOX,
-                'label' => 'Soll das Password gespeichert werden?'
-            ]
-        )->addElement(
-            [
-                'id' => 'save',
+                'id' => 'register',
                 'type' => Element::SUBMIT,
-                'label' => 'Speichern'
+                'label' => 'Registrieren'
             ]
         );
     }

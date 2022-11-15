@@ -10,6 +10,9 @@ use src\Model\Task\Mapper\JobMapper;
 use src\Model\JobHistory\JobHistory;
 use src\Model\JobHistory\Mapper\JobHistoryMapper;
 
+/**
+ * @deprecated
+ */
 class JobHistoryController extends AbstractController
 {
     public function deleteCheckAction(): void

@@ -8,8 +8,8 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <?= $this->form->getElement('username')->label() ?>
-                        <?= $this->form->getElement('username')->getHtml() ?>
+                        <?= $this->form->getElement('email')->label() ?>
+                        <?= $this->form->getElement('email')->getHtml() ?>
                     </div>
                 </div>
                 <div class="row">
