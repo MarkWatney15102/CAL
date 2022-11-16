@@ -13,6 +13,7 @@ abstract class AbstractElement
     protected string $class = "";
     protected string|int $value = "";
     protected Closure $write;
+    protected string $attributes = "";
 
     public function getId(): string
     {
@@ -69,9 +70,19 @@ abstract class AbstractElement
         return $this;
     }
 
-    public function getWrite(): Closure
+    public function getWrite(): Closure|null
     {
-        return $this->write;
+        return $this->write ?? null;
+    }
+
+    public function getAttributes(): string
+    {
+        return $this->attributes;
+    }
+
+    public function setAttributes(string $attributes): void
+    {
+        $this->attributes = $attributes;
     }
 
     abstract public function getHtml(): string;

@@ -6,7 +6,7 @@ use src\Helper\User\UserHelper;
 ?>
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark left-sidebar">
     <a href="/dashboard" class="sidebar-header">
-        <span class="fs-4">Auftragssystem</span>
+        <span class="fs-4">Auftragssystem - CAL</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
@@ -15,11 +15,17 @@ use src\Helper\User\UserHelper;
                 <img src="/images/icons/dashboard.svg" alt="Dashboard" class="navbar-icon">
                 Dashboard
             </a>
-        </li>
-        <li>
             <a href="/projects" class="nav-link text-white">
                 <img src="/images/icons/projects.svg" alt="Projects" class="navbar-icon">
                 Projekte
+            </a>
+            <a href="/storage" class="nav-link text-white">
+                <img src="/images/icons/projects.svg" alt="Projects" class="navbar-icon">
+                Lagerorte
+            </a>
+            <a href="/storage/items" class="nav-link text-white">
+                <img src="/images/icons/projects.svg" alt="Projects" class="navbar-icon">
+                Lager Artikel
             </a>
         </li>
     </ul>

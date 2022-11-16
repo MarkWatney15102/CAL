@@ -13,7 +13,8 @@ class ElementNumber extends AbstractElement
         $class = $this->getClass() . ' form-control' ?? "";
         $id = $this->getId() ?? "";
         $value = $this->getValue();
+        $attributes = $this->getAttributes();
 
-        return '<input type="number" class="' . $class . '" name="' . $id . '" id="' . $id . '" value="' . $value . '">';
+        return '<input type="number" class="' . $class . '" name="' . $id . '" id="' . $id . '" value="' . $value . '" ' . $attributes . '>';
     }
 }

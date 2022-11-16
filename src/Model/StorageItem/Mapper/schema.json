@@ -1,0 +1,12 @@
+{
+  "table": "storage_item",
+  "primaryKey": "ean",
+  "fields": [
+    {
+      "name": "name"
+    },
+    {
+      "name": "description"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "table": "storage_item_to_place",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "ean"
+    },
+    {
+      "name": "placeId"
+    },
+    {
+      "name": "amount"
+    },
+    {
+      "name": "row"
+    },
+    {
+      "name": "position"
+    }
+  ]
+}

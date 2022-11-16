@@ -15,11 +15,12 @@ class ElementSelect extends AbstractElement
         $class = $this->getClass() . ' form-control' ?? "";
         $id = $this->getId() ?? "";
         $value = (int)$this->getValue();
+        $attributes = $this->getAttributes();
 
         $optionsHtml = $this->buildOptions($value);
 
         return <<<HTML
-            <select name="{$id}" id="{$id}" class="{$class}">
+            <select name="{$id}" id="{$id}" class="{$class}" {$attributes}>
                 {$optionsHtml}
             </select>
         HTML;

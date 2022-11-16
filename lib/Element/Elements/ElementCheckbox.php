@@ -11,7 +11,8 @@ class ElementCheckbox extends AbstractElement
         $class = $this->getClass() . " form-check-input" ?? "";
         $id = $this->getId() ?? "";
         $checked = ((int)$this->getValue() > 0) ? 'checked' : '';
+        $attributes = $this->getAttributes();
 
-        return '<input type="checkbox" class="' . $class . '" name="' . $id . '" id="' . $id . '" ' . $checked .'>';
+        return '<input type="checkbox" class="' . $class . '" name="' . $id . '" id="' . $id . '" ' . $attributes . ' ' . $checked .'>';
     }
 }

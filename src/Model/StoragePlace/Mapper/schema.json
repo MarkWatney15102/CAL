@@ -1,0 +1,9 @@
+{
+  "table": "storage_place",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "name"
+    }
+  ]
+}
