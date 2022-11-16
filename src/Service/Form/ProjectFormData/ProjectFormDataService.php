@@ -17,7 +17,7 @@ class ProjectFormDataService
         $users = UserContainer::getInstance()->findBy();
 
         foreach ($users as $user) {
-            if ($user instanceof User) {
+            if ($user instanceof User && $user->getStatus() !== 0) {
                 $text = "[" . $user->getId() . "] " . $user->getFirstname() . " " . $user->getLastname() . " (" . $user->getUsername() . ")";
 
                 $options[] = ['value' => $user->getId(), 'text' => $text];

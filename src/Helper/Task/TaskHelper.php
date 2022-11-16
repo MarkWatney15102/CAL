@@ -19,9 +19,11 @@ class TaskHelper
         $users = UserContainer::getInstance()?->findBy([]);
 
         foreach ($users as $user) {
-            $text = "[" . $user->getId() . "] " . $user->getFirstname() . " " . $user->getLastname() . " (" . $user->getUsername() . ")";
+            if ($user->getStatus() !== 0) {
+                $text = "[" . $user->getId() . "] " . $user->getFirstname() . " " . $user->getLastname() . " (" . $user->getUsername() . ")";
 
-            $options[] = ['value' => $user->getID(), 'text' => $text];
+                $options[] = ['value' => $user->getID(), 'text' => $text];
+            }
         }
 
         return $options;
