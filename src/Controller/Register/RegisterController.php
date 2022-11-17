@@ -5,7 +5,7 @@ namespace src\Controller\Register;
 use lib\Controller\AbstractController;
 use lib\Message\Message;
 use lib\Message\MessageGroup;
-use src\Form\RegisterFormFactory;
+use src\Form\Register\RegisterFormFactory;
 use src\Helper\HTML;
 use src\Helper\Redirect;
 use src\Model\User\Mapper\UserMapper;

@@ -6,7 +6,7 @@ use lib\Auth\Auth;
 use lib\Controller\AbstractController;
 use lib\Message\Message;
 use lib\Message\MessageGroup;
-use src\Form\LoginFormFactory;
+use src\Form\Login\LoginFormFactory;
 use src\Helper\HTML;
 use src\Helper\Redirect;
 use src\Model\User\Mapper\UserContainer;
