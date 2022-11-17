@@ -6,13 +6,15 @@ namespace lib\Form;
 
 use Exception;
 use lib\Element\AbstractElement;
+use lib\Element\Elements\ElementSubmit;
+use lib\Model\AbstractEntity;
 
 abstract class AbstractForm
 {
     private bool $executeRead = true;
     private bool $executeWrite = false;
 
-    public function __construct(private string $formId, protected AbstractFormData $formData)
+    public function __construct(private readonly string $formId, protected AbstractFormData $formData)
     {
     }
 
@@ -50,5 +52,40 @@ abstract class AbstractForm
 
     public function save(): void
     {
+        $formData = $this->getFormData();
+        $elements = $formData->getElements();
+
+        foreach ($elements as $element) {
+            if ($element instanceof AbstractElement && !$element instanceof ElementSubmit) {
+                if (array_key_exists($element->getId(), $_POST)) {
+                    $newValue = $_POST[$element->getId()];
+                    if (!empty($element->getWrite())) {
+                        call_user_func($element->getWrite(), $newValue);
+                    }
+                }
+            }
+        }
+
+        /** @var AbstractEntity[] $models */
+        $models = $formData->getModels();
+
+
+        $uri = $_SERVER['REQUEST_URI'];
+        $i = 0;
+        foreach ($models as $model) {
+            $mapperClass = $model->getMapperClass();
+
+            if ($model->getID() !== null) {
+                $mapperClass?->update($model);
+            } else {
+                $id = $mapperClass?->create($model);
+                if ($i === 0) {
+                    $uri = str_replace("0", "" .$id, $_SERVER['REQUEST_URI']);
+                }
+            }
+            $i++;
+        }
+
+        header('Location:' . $uri);
     }
 }

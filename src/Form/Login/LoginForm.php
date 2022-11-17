@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace src\Form;
+namespace src\Form\Login;
 
 use lib\Form\AbstractForm;
 

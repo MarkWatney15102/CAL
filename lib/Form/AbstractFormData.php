@@ -91,4 +91,9 @@ abstract class AbstractFormData
 
         return null;
     }
+
+    public function getModels(): array
+    {
+        return $this->models;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Form;
+namespace src\Form\Register;
 
 class RegisterFormFactory
 {
