@@ -1,0 +1,15 @@
+{
+  "table": "projects",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "id"
+    },
+    {
+      "name": "title"
+    },
+    {
+      "name": "creator_user_id"
+    }
+  ]
+}

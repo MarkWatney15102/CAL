@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace lib\Routing;
 
+use BillsController;
 use lib\Auth\Level;
 use src\Controller\Register\RegisterController;
 use src\Controller\Access\AccessController;
@@ -427,7 +428,7 @@ class RoutesImp
             '/storage/item/(\d+)',
             StorageController::class,
             'saveStorageItemAction',
-            RouteMethod::POST,
+            RouteMethod::GET,
             Level::WORKER->getLevel(),
             true
         );
@@ -446,6 +447,16 @@ class RoutesImp
             ApiController::class,
             'bookinStorageItemAction',
             RouteMethod::POST,
+            Level::WORKER->getLevel(),
+            true
+        );
+
+        //start bills
+        $this->routes[] = new Route(
+            '/bills',
+            BillsController::class,
+            'listBillsAction',
+            RouteMethod::GET,
             Level::WORKER->getLevel(),
             true
         );

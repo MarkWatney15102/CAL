@@ -27,6 +27,10 @@ use src\Helper\User\UserHelper;
                 <img src="/images/icons/projects.svg" alt="Projects" class="navbar-icon">
                 Lager Artikel
             </a>
+            <a href="/bills" class="nav-link text-white">
+                <img src="/images/icons/projects.svg" alt="Rechnungen" class="navbar-icon">
+                Rechnungen
+            </a>
         </li>
     </ul>
     <hr>
