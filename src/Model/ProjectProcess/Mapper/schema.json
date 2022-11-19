@@ -1,0 +1,18 @@
+{
+  "table": "projectProcess",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "projectId"
+    },
+    {
+      "name": "creatorUserId"
+    },
+    {
+      "name": "amountToBuild"
+    },
+    {
+      "name": "timestamp"
+    }
+  ]
+}
