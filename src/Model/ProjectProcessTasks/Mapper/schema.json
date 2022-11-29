@@ -1,0 +1,15 @@
+{
+  "table": "projectProcessTasks",
+  "primaryKey": "ID",
+  "fields": [
+    {
+      "name": "projectProcessId"
+    },
+    {
+      "name": "taskId"
+    },
+    {
+      "name": "status"
+    }
+  ]
+}

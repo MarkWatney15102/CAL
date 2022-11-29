@@ -54,7 +54,8 @@ class ProjectController extends AbstractController
                 'renderWithBasicBody' => true,
                 'form' => $this->form,
                 'projectId' => $projectId,
-                'tableFields' => $taskService->buildTableBody($tasks)
+                'tableFields' => $taskService->buildTableBody($tasks),
+                'projectProcesses' => $taskService->getActiveProcesses($projectId)
             ]
         );
     }
