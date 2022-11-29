@@ -2,6 +2,7 @@
 
 namespace src\Service\Table\Task;
 
+use src\Model\ProjectProcess\Mapper\ProjectProcessContainer;
 use src\Model\Task\Task;
 
 class TaskService
@@ -27,5 +28,10 @@ class TaskService
         }
 
         return $html;
+    }
+
+    public function getActiveProcesses(int $projectId): array
+    {
+        return ProjectProcessContainer::getInstance()?->findBy(['projectId' => $projectId]);
     }
 }

@@ -1,3 +1,8 @@
+<?php
+
+use src\Model\ProjectProcess\ProjectProcess;
+
+?>
 <?= $this->form->open() ?>
 <div class="row">
     <div class="col-lg-8">
@@ -78,7 +83,7 @@
 </div>
 <br>
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-8">
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Aufträge</h4>
@@ -104,6 +109,37 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Aktive Prozesse</h4>
+                <a href="/project/<?= $this->projectId ?>/process/start" class="btn btn-outline-info" style="float: right; margin-top: -38px;">Neuen Process starten</a>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Aktionen</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    /** @var ProjectProcess[] $processes */
+                    $processes = $this->projectProcesses;
+                    foreach ($processes as $process) { ?>
+                        <tr>
+                            <td><?= $process->getID() ?></td>
+                            <td></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

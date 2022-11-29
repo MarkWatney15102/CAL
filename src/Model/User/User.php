@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace src\Model\User;
 
 use lib\Model\AbstractEntity;
+use src\Model\User\Mapper\UserMapper;
 
 class User extends AbstractEntity
 {
@@ -166,5 +167,16 @@ class User extends AbstractEntity
     public function getStatus(): int
     {
         return (int)$this->status;
+    }
+
+    public static function currentUser(): User
+    {
+        $user = UserMapper::getInstance()?->read((int)$_COOKIE['UID']);
+
+        if (!$user instanceof User) {
+            throw new \Exception('No User is logged in');
+        }
+
+        return $user;
     }
 }

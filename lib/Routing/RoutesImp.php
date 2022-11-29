@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace lib\Routing;
 
 use lib\Auth\Level;
+use src\Controller\Project\ProjectProcessController;
 use src\Controller\Register\RegisterController;
 use src\Controller\Access\AccessController;
 use src\Controller\Admin\AccessControl\AccessControlGroupController;
@@ -446,6 +447,15 @@ class RoutesImp
             ApiController::class,
             'bookinStorageItemAction',
             RouteMethod::POST,
+            Level::WORKER->getLevel(),
+            true
+        );
+
+        $this->routes[] = new Route(
+            '/project/(\d+)/process/start',
+            ProjectProcessController::class,
+            'startProcessAction',
+            RouteMethod::GET,
             Level::WORKER->getLevel(),
             true
         );
